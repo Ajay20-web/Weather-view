@@ -1,0 +1,374 @@
+/* ------------------ DESIGN VARIABLES ------------------ */
+
+:root {
+    /* Colors */
+    --bg-gradient: linear-gradient(5deg, rgba(2,0,36,0.05), rgba(4,4,56,0.06), rgba(0,94,255,0.06));
+    --card-gradient: radial-gradient(circle, rgba(2,0,36,0.08), rgba(4,4,56,0.04), rgba(255,89,0,0.06));
+    --accent-gradient: linear-gradient(to right, #9796f0, #fbc7d4);
+    --light-pink: #a04b6ea5;
+    --dark-pink: #b82964b3;
+    --search-bar-bg: #0606060c;
+    --placeholder-color: #595151; 
+    --unit-bg: rgba(37,65,88,0.09);
+    --color-text: #000;
+    --color-white: #fff;
+
+    /* Spacing scale */
+    --space-xxs: .25rem;
+    --space-xs: .5rem;
+    --space-s: .7rem;
+    --space-m: 1rem;
+    --space-l: 1.5rem;
+
+    /* FONT SCALE */
+    --font-xs: 0.75rem;   /* 12px */
+    --font-s: 0.875rem;   /* 14px */
+    --font-m: 1rem;       /* 16px */
+    --font-l: 1.25rem;    /* 20px */
+    --font-xl: 1.5rem;    /* 24px */
+    --font-xxl: 2rem;     /* 32px */
+
+    /* Radius */
+    --radius-s: 8px;
+    --radius-m: 12px;
+    --radius-l: 20px;
+
+    /* Shadows */
+    --shadow-s: 0 3px 10px rgba(0,0,0,0.1);
+    --shadow-m: 0 4px 10px rgba(74,71,71,0.1);
+}
+
+/* ------------------ DARK MODE ------------------ */
+
+body.dark{
+  /* Colors */
+    --bg-gradient: linear-gradient(180deg, #0f0d12e4, #18171c);
+    --card-gradient:linear-gradient(145deg, rgba(255, 255, 255, 0.08),  rgba(255, 255, 255, 0.03));
+    --accent-gradient: linear-gradient(to right, #141270, #bc3758);
+    --light-pink: #fcfcfcb9;
+    --dark-pink: #ffffffb3;
+    --search-bar-bg:rgba(255,255,255,0.1);
+    --placeholder-color: #ffffffc1; 
+    --unit-bg: rgba(255,255,255,0.1);
+    --color-text: #fff;
+    color: #fff;
+    font-weight: 400;
+
+    /* Shadows */
+    --shadow-s: 0 3px 10px rgba(10, 10, 10, 0.094);
+    --shadow-m: 0 4px 10px rgba(65, 58, 58, 0.1);
+ 
+}
+/* ------------------ GLOBAL ------------------ */
+
+body {
+    margin: 0;
+    padding: var(--space-l);
+    font-family: sans-serif;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    background: var(--bg-gradient);
+    color: var(--color-text);
+
+    text-transform: capitalize;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-l);
+    font-size: var(--font-m);
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    width: 140px;
+    height: auto;
+}
+
+.settings-button {
+    padding: .6rem;
+    border-radius: var(--radius-s);
+    background-color:var(--unit-bg);
+    color: var(--color-text);
+    border: none;
+    cursor: pointer;
+    box-shadow: var(--shadow-m);
+    font-size: var(--font-m);
+}
+
+
+/* =========================================================
+   SEARCH
+   ========================================================= */
+
+.search-section {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--space-xs);
+    padding: var(--space-m) 0;
+    width: 100%;
+}
+
+.search-bar {
+    padding: .8rem 1rem;
+    border-radius: 10px;
+    background-color:var(--search-bar-bg);
+    width: 100%;
+    max-width: 300px;
+    box-shadow: var(--shadow-s);
+    border: none;
+}
+
+.search-bar input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: var(--font-m);
+}
+
+.search-section input::placeholder {
+    font-size: var(--font-s);
+    color: var(--placeholder-color);
+}
+
+.search-button {
+    width: 100%;
+    max-width: 300px;
+    padding: .8rem 1rem;
+    font-size: var(--font-s);
+    border-radius: 10px;
+    background-color: var(--unit-bg);
+    color: var(--color-text);
+    border: none;
+    cursor: pointer;
+    box-shadow: var(--shadow-m);
+}
+
+
+/* =========================================================
+   MAIN LAYOUT
+   ========================================================= */
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-l);
+}
+
+.main-heading h1{
+    text-align: center;
+    font-size: var(--font-xxl);
+    font-weight: 500;
+    color: var(--light-pink);
+    margin: 0;
+    padding: var(--space-s) 0;
+}
+
+.weather-grid-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-l);
+}
+
+
+/* =========================================================
+   LEFT SIDE
+   ========================================================= */
+
+.leftside-section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-m);
+}
+
+
+/* ------------------ HERO ------------------ */
+
+.hero-section {
+    width: 100%;
+}
+
+.hero-image-container {
+    height: 220px;
+    border-radius: var(--radius-l);
+    background-image: var(--accent-gradient);
+    display: flex;
+    align-items: center;
+}
+
+.hero-info {
+    width: 100%;
+    padding: var(--space-m) calc(var(--space-m)*1.5);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--color-white);
+    font-size: var(--font-l);
+}
+
+
+/* =========================================================
+   WEATHER DATA CARDS (GRID)
+   ========================================================= */
+
+.weather-data-card-container {
+    display: grid;
+    gap: var(--space-s);
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+}
+
+.weather-data-card {
+    background: var(--card-gradient);
+    padding: var(--space-m);
+    border-radius: var(--radius-m);
+    box-shadow: var(--shadow-m);
+    text-align: center;
+}
+
+.weather-data-card p {
+    margin-top: 5px;
+    font-size: var(--font-s);
+}
+
+
+/* =========================================================
+   DAILY FORECAST
+   ========================================================= */
+
+.daily-forecast-data {
+    display: grid;
+    gap: var(--space-s);
+    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+}
+
+.daily-forecast-data article {
+    background: var(--card-gradient);
+    padding: .7rem;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-m);
+    border-radius: var(--radius-m);
+    box-shadow: var(--shadow-m);
+    text-align: center;
+    font-size: var(--font-s);
+}
+
+.daily-forecast-data img{
+    margin: 0 auto;
+}
+
+.weather-icon {
+    width: 22px;
+}
+
+.minmax-tem{
+    display: flex;
+    justify-content: space-between;
+}
+
+/* =========================================================
+   RIGHT SIDE (HOURLY)
+   ========================================================= */
+
+.rightside-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.hourly-forecast {
+    width: 100%;
+    min-width: 260px;
+    padding: var(--space-m);
+    border-radius: var(--radius-l);
+    background: linear-gradient(5deg, rgba(2,0,36,0.08), rgba(4,4,56,0.04), rgba(255,89,0,0.09));
+    box-shadow: var(--shadow-m);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-m);
+}
+
+.hourly-header h3,
+.weather-data-card h4 {
+    font-size: var(--font-s);
+    font-weight: 300;
+}
+
+.hour-row {
+    width: 100%;
+    height: 65px;
+    padding: 0 .8rem;
+    background: var(--card-gradient);
+    border-radius: 14px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: var(--font-s);
+}
+
+.hourly-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hourly-header h3 {
+    font-size: var(--font-l);
+    font-weight: 700;
+    color:var(--dark-pink);
+}
+
+.hourly-header select {
+    padding: .3rem .5rem;
+    font-size: var(--font-s);
+    background-color: rgba(191, 165, 181, 0.212);
+    border-radius: 9px;
+    padding: var(--space-s);
+    border: none;
+    color: var(--light-pink);
+    font-weight: 400;
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   DESKTOP UPGRADE
+   ========================================================= */
+
+@media (min-width: 900px) {
+    .weather-grid-container {
+        flex-direction: row;
+    }
+
+    .leftside-section {
+        flex: 2;
+    }
+
+    .rightside-section {
+        flex: 1;
+    }
+}
+
+
+
+
+
+
+
+
+
+

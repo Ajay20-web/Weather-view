@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/weather-view-index.css">
+    <title>Weather View</title>
+</head>
+<body class="">
+    <header>
+        <div class="header-left-section">
+         <img class="logo" src="images/weather-view-logo.png">
+        </div>
+        <div class="header-right-section">
+         <button class="settings-button">Units</button>
+        </div>
+    </header>
+
+    <main>
+        <div class="main-heading">
+          <h1>Find your perfect day.... </h1>
+        </div>
+        <section class="search-section">
+            <input class="search-bar" type="text" placeholder="search for a city...">
+            <button class="search-button">Search</button>
+        </section>
+       
+        <div class="weather-grid-container">
+          <section class="leftside-section">
+             <section class="hero-section">
+                    <div class="hero-image-container">
+                      <div class="hero-info">
+                            <div>
+                            <h3 class="city-name">City Name</h3> 
+                            <p class="date">Monday, Aug 31, 2025</p>
+                            </div>
+                            <h2 class="temperature">20°C</h2>
+                      </div>    
+                    </div>      
+             </section>
+                <div class="weather-data-card-container">
+                    <article class="weather-data-card">
+                        <h4>Feels like</h4>
+                        <p>18°C</p>
+                    </article>
+                    <article class="weather-data-card">
+                        <h4>Humidity</h4>
+                        <p>60%</p>
+                    </article>
+                    <article class="weather-data-card">
+                        <h4>Wind</h4>
+                        <p>10km/h</p>
+                    </article>
+                    <article class="weather-data-card">
+                        <h4>Pressure</h4>
+                        <p>1013hPa</p>
+                    </article>
+                </div>
+                <div class="daily-forecast">
+                    <h3>Daily Forecast</h3>
+                    <div class="daily-forecast-data">
+                        <article>
+                            <p>Tue</p>
+                            <img src="https://openweathermap.org/img/wn/10d@4x.png" class="weather-icon">
+                            <div class="minmax-tem">
+                             <span>20°</span> 
+                             <span>17°</span>  
+                            </div>
+                        </article>
+                        <article>
+                            <p>Tue</p>
+                            <img src="images/weather icons/raining.png" class="weather-icon">
+                            <div class="minmax-tem">
+                             <span>20°</span> 
+                             <span>17°</span>  
+                            </div>
+                        </article>
+                        <article>
+                            <p>Tue</p>
+                            <img src="images/weather icons/sun.png" class="weather-icon">
+                            <div  class="minmax-tem">
+                             <span>20°</span> 
+                             <span>17°</span>  
+                            </div> 
+                        </article>
+                        <article>
+                            <p>Tue</p>
+                            <img src="images/weather icons/cloudy.png" class="weather-icon">
+                            <div class="minmax-tem">
+                             <span>20°</span> 
+                             <span>17°</span>  
+                            </div>  
+                        </article>
+                        <article>
+                            <p>Tue</p>
+                            <img src="images/weather icons/thunderstorm.png" class="weather-icon">
+                            <div  class="minmax-tem">
+                             <span>20°</span> 
+                             <span>17°</span>  
+                            </div> 
+                        </article>
+                        <article>
+                        <p>Tue</p>
+                            <img src="images/weather icons/snow.png" class="weather-icon">
+                            <div class="minmax-tem">
+                             <span>20°</span> 
+                             <span>17°</span>  
+                            </div> 
+                        </article>
+                        <article>
+                            <p>Tue</p>
+                            <img src="images/weather icons/wind.png" class="weather-icon">
+                             <div class="minmax-tem">
+                             <span>20°</span> 
+                             <span>17°</span>  
+                            </div>
+                        </article>
+                    </div>
+                </div>
+          </section>
+          <section class="rightside-section">
+               <div class="hourly-forecast">
+                    <div class="hourly-header">
+                        <h3>Hourly forecast</h3>
+                        <select>
+                        <option>Tuesday</option>
+                        <option>Wednesday</option>
+                        <option>Thursday</option>
+                        <option>Friday</option>
+                        <option>Saturday</option>
+                        <option>Sunday</option>
+                        <option>Monday</option>
+                        </select>
+                    </div>
+
+                    <div class="hour-row">
+                        <img src="images/weather icons/raining.png" class="weather-icon">
+                        <span class="time">3 PM</span>
+                        <span class="temp">20°</span>
+                    </div>
+
+                    <div class="hour-row">
+                        <img src="images/weather icons/rainy.png" class="weather-icon">
+                        <span class="time">4 PM</span>
+                        <span class="temp">20°</span>
+                    </div>
+
+                    <div class="hour-row">
+                        <img src="images/weather icons/sun.png" class="weather-icon">
+                        <span class="time">5 PM</span>
+                        <span class="temp">20°</span>
+                    </div>
+
+                    <div class="hour-row">
+                        <img src="images/weather icons/cloudy.png" class="weather-icon">
+                        <span class="time">6 PM</span>
+                        <span class="temp">19°</span>
+                    </div>
+
+                    <div class="hour-row">
+                        <img src="images/weather icons/thunderstorm.png" class="weather-icon">
+                        <span class="time">8 PM</span>
+                        <span class="temp">18°</span>
+                    </div>
+
+                    <div class="hour-row">
+                        <img src="images/weather icons/snow.png" class="weather-icon">
+                        <span class="time">9 PM</span>
+                        <span class="temp">17°</span>
+                    </div>
+                </div>
+          </section>
+        </div>
+    </main>
+
+  
+
+</body>
+</html>
