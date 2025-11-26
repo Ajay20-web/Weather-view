@@ -1,4 +1,4 @@
-import {fetchLocation} from "../data/weather-api.js"
+import {fetchLocation} from "../data/geocoding-api.js"
 
 // Search button functionality
 function searchButton() {
@@ -6,16 +6,23 @@ function searchButton() {
     searchBtn.addEventListener('click' , () => {
        const userInput = document.querySelector('.js-search-bar');
        const inputValue = userInput.value;
-       const searchString = inputValue;
+       const searchString = inputValue.toLowerCase().trim();
        if (!searchString) {
         alert('Please enter a city name to search.');
         return;
        };
-       fetchLocation(searchString.toLowerCase().trim());
+       saveData(searchString);
+       fetchLocation();
        userInput.value = '';
     });
     
 };
 
+
+function saveData(userSearch) {
+   localStorage.setItem('userInput',JSON.stringify(userSearch));
+};
+
 searchButton();
+ 
 

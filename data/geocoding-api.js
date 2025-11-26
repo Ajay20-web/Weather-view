@@ -1,5 +1,6 @@
-export async function fetchLocation(userLocationInput) {
-    let userLocation = userLocationInput || 'chennai'; 
+export async function fetchLocation() {
+    let userLocationInput = JSON.parse(localStorage.getItem('userInput')) || 'chennai'; 
+    let userLocation = userLocationInput;
     try{ 
     const response = await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${userLocation}&count=1&language=en&format=json`);
     if (!response.ok) {
