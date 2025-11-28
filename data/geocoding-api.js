@@ -15,9 +15,11 @@ export async function fetchLocation() {
    };
 
     console.log(data);
+    const cityName = data.results[0].name;
     const latitude = data.results[0].latitude;
     const longitude = data.results[0].longitude;
-    console.log(latitude, longitude);
+   // console.log(latitude, longitude);
+    return {cityName, latitude, longitude };
  
 } catch (error) {
     console.log('Error fetching location:', error.message);

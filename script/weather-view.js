@@ -1,5 +1,6 @@
-import {fetchLocation} from "../data/geocoding-api.js"
-
+import {fetchLocation} from "../data/geocoding-api.js";
+import {fetchCurrentWeather} from "../data/current-weatherData.js";
+import './current-weather.js';
 // Search button functionality
 function searchButton() {
     const searchBtn = document.querySelector(".js-search-btn");
@@ -13,6 +14,7 @@ function searchButton() {
        };
        saveData(searchString);
        fetchLocation();
+        fetchCurrentWeather();
        userInput.value = '';
     });
     
