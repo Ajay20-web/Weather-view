@@ -3,8 +3,8 @@ import { fetchLocation } from "../data/geocoding-api.js";
 import dayjs from 'https://cdn.jsdelivr.net/npm/dayjs@1.11.18/+esm';
 
 export async function loadingWeatherData() {
-    const {cityName} = await fetchLocation();
-    const weatherData = await fetchCurrentWeather();
+    const {cityName , latitude, longitude} = await fetchLocation();
+    const weatherData = await fetchCurrentWeather(latitude, longitude);
     updateWeatherViewHero(cityName,weatherData);
     updateWeatherViewDataCarts(weatherData);
     console.log(weatherData);
