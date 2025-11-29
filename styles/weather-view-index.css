@@ -76,7 +76,7 @@ body.loading {
 
 /* hide text when loading */
 [data-load] {
-  color: rgba(0,0,0,var(--text-opacity));
+  /* color: rgba(0,0,0,var(--text-opacity)); */
   position: relative;
 }
 
@@ -84,7 +84,13 @@ body.loading {
 body.loading [data-load] {
   background: var(--skeleton-bg);
   border-radius: var(--radius-s);
+  color: rgba(0,0,0,var(--text-opacity)); 
   overflow: hidden;
+}
+
+/* hide image when loading */
+body.loading [data-load] img{
+  display: none;
 }
 
 /* shimmer animation */
@@ -99,7 +105,7 @@ body.loading [data-load]::before {
     var(--skeleton-shine),
     transparent
   );
-  animation: skeleton-shimmer 1.2s infinite;
+  animation: skeleton-shimmer 1.8s infinite;
 }
 
 @keyframes skeleton-shimmer {
