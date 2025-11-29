@@ -28,7 +28,7 @@
         <div class="weather-grid-container">
           <section class="leftside-section">
              <section class="hero-section">
-                    <div class="hero-image-container">
+                    <div class="hero-image-container" data-load>
                       <div class="hero-info">
                             <div>
                             <h3 class="city-name js-city-name"></h3> 
@@ -39,19 +39,19 @@
                     </div>      
              </section>
                 <div class="weather-data-card-container">
-                    <article class="weather-data-card">
+                    <article class="weather-data-card" data-load>
                         <h4>Feels like</h4>
                         <p class="js-feels-like"></p>
                     </article>
-                    <article class="weather-data-card">
+                    <article class="weather-data-card" data-load>
                         <h4>Humidity</h4>
                         <p class="js-humidity"></p>
                     </article>
-                    <article class="weather-data-card">
+                    <article class="weather-data-card" data-load>
                         <h4>Wind</h4>
                         <p class="js-wind"></p>
                     </article>
-                    <article class="weather-data-card">
+                    <article class="weather-data-card" data-load>
                         <h4>Pressure</h4>
                         <p class="js-pressure"></p>
                     </article>
@@ -59,9 +59,9 @@
                 <div class="daily-forecast">
                     <h3>Daily Forecast</h3>
                     <div class="daily-forecast-data">
-                        <article>
+                        <article data-load>
                             <p>Tue</p>
-                            <img src="https://openweathermap.org/img/wn/10d@4x.png" class="weather-icon">
+                            <img src="https://openweathermap.org/img/wn/03d@4x.png" class="weather-icon">
                             <div class="minmax-tem">
                              <span>20°</span> 
                              <span>17°</span>  
@@ -118,7 +118,7 @@
                     </div>
                 </div>
           </section>
-          <section class="rightside-section">
+          <section class="rightside-section" data-load>
                <div class="hourly-forecast">
                     <div class="hourly-header">
                         <h3>Hourly forecast</h3>
