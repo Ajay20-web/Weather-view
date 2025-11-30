@@ -1,5 +1,5 @@
-import { fetchCurrentWeather } from "../data/current-weatherData.js";
-import { fetchLocation } from "../data/geocoding-api.js";
+import { fetchCurrentWeather } from "../data/current-weather-data.js";
+import { fetchLocation } from "../data/geocoding-api-data.js";
 import dayjs from 'https://cdn.jsdelivr.net/npm/dayjs@1.11.18/+esm';
 
 export async function loadingWeatherData() {
