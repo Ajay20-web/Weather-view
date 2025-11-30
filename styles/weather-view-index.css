@@ -94,7 +94,7 @@ body.loading [data-load] {
 
 /* hide image when loading */
 body.loading [data-load] img{
-  display: none;
+  opacity: 0;
 }
 
 /* shimmer animation */
@@ -109,7 +109,7 @@ body.loading [data-load]::before {
     var(--skeleton-shine),
     transparent
   );
-  animation: skeleton-shimmer 1.8s infinite;
+  animation: skeleton-shimmer 1.4s infinite;
 }
 
 @keyframes skeleton-shimmer {
@@ -179,7 +179,7 @@ header {
     color: var(--color-text);
     border: none;
     cursor: pointer;
-    box-shadow: var(--shadow-m);
+    box-shadow: var(--shadow-m); 
     font-size: var(--font-m);
 }
 
@@ -392,8 +392,12 @@ main {
     margin: 0 auto;
 }
 
+.daily-forecast-data article p{
+    margin: 0;
+}
+
 .weather-icon {
-    width: 22px;
+    width: 40px;
 }
 
 .minmax-tem{
