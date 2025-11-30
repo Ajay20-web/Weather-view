@@ -188,6 +188,43 @@ header {
   box-shadow: var(--hover-shadow-m);
 }
 
+/* ------------------ SETTINGS DROPDOWN ------------------ */
+
+.settings-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: var(--search-bar-bg);
+  min-width: 140px;
+  box-shadow: var(--shadow-m);
+  z-index: 1;
+  border-radius: var(--radius-m);
+  padding: var(--space-xxs);
+  backdrop-filter: blur(10px); /* Frosted glass effect */
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.dropdown-content .drop{
+  color: var(--color-text);
+  padding: var(--space-s) var(--space-m);
+  text-decoration: none;
+  display: block;
+  border-radius: var(--radius-s);
+  font-size: var(--font-s);
+}
+
+.dropdown-content .drop:hover {
+  background-color: var(--unit-bg);
+}
+
+.settings-dropdown:hover .dropdown-content {
+  display: block;
+}
 
 /* =========================================================
    SEARCH
@@ -449,13 +486,3 @@ main {
         flex: 1;
     }
 }
-
-
-
-
-
-
-
-
-
-

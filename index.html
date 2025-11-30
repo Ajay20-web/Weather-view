@@ -12,8 +12,14 @@
          <img class="logo" src="images/weather-view-logo.png">
         </div>
         <div class="header-right-section">
-         <button class="settings-button">Units</button>
-         <button class="dark-mode-btn">🌙</button>
+            <div class="settings-dropdown">
+                <button class="settings-button">Units</button>
+                <div class="dropdown-content">
+                    <div class="drop" data-unit="metric">Celsius</div>
+                    <div class="drop" data-unit="imperial">Fahrenheit</div>
+                </div>
+            </div>
+            <button class="dark-mode-btn">🌙</button>
         </div>
     </header>
 
@@ -174,7 +180,7 @@
         </div>
     </main>
 
- <script type="module" src="script/weather-view.js"></script>
+ <script type="module" src="scripts/weather-view.js"></script>
  
 </body>
 </html>
