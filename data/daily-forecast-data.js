@@ -6,7 +6,7 @@ export async function fetchDailyForecastData(latitude, longitude) {
             throw new Error('Network response error');
         };
         const data = await response.json();
-       console.log(data);
+       // console.log(data);
         return data;
     } catch (error) {
         console.log('Error fetching current weather data:', error.message);

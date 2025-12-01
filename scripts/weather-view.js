@@ -1,7 +1,7 @@
 import {fetchLocation} from "../data/geocoding-api-data.js";
 import {fetchCurrentWeather} from "../data/current-weather-data.js";
-import {fetchDailyForecastData} from "../data/daily-forecast-data.js";
 import './current-weather.js';
+import './daily-forecast.js';
 // Search button functionality
 function searchButton() {
     const searchBtn = document.querySelector(".js-search-btn");
