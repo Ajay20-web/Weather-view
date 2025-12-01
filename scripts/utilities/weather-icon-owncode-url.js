@@ -18,6 +18,13 @@ export function getIconUrl(wmoCode) {
     75: '13d', // Snow: Heavy
     95: '11d', // Thunderstorm: Slight or moderate
     96: '11d', // Thunderstorm with slight hail
+    99: '11d',  // Thunderstorm with heavy hail
+    80: '09d', // Rain showers: Slight
+    82: '09d', // Rain showers: Violent
+    85: '13d', // Snow showers: Slight
+    86: '13d', // Snow showers: Heavy
+    95: '11d', // Thunderstorm: Slight or moderate
+    96: '11d', // Thunderstorm with slight hail
     99: '11d'  // Thunderstorm with heavy hail
   };
 
