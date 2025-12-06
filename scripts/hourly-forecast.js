@@ -1,22 +1,7 @@
-import { hourlyForecastData } from "../data/hourly-forecast-data.js";
-import { fetchLocation } from "../data/geocoding-api-data.js";
 import { getIconUrl } from "./utilities/weather-icon-owncode-url.js";
 import dayjs from 'https://cdn.jsdelivr.net/npm/dayjs@1.11.18/+esm';
 
-let topLevelWeatherData;
-let topLevelApiData;
-//addEventListenerToSelector(topLevelWeatherData, topLevelApiData);
-
-async function loadingHourlyForecast() {
-    const { latitude, longitude } = await fetchLocation();
-    const { WeatherDataGrouping , apiData } = await hourlyForecastData(latitude, longitude);
-    topLevelWeatherData = WeatherDataGrouping;
-    topLevelApiData = apiData;
-    renderHourlyForecast(WeatherDataGrouping , apiData);
-};
-loadingHourlyForecast();
-
-function renderHourlyForecast(WeatherDataGrouping, apiData) {
+export function renderHourlyForecast(WeatherDataGrouping, apiData) {
     renderOptions(WeatherDataGrouping, apiData);
     hourlyForecastDataSlice(WeatherDataGrouping , apiData);
 };
@@ -42,7 +27,7 @@ function renderOptions(WeatherDataGrouping, apiData) {
    dateSelector.innerHTML = options;
 };
 
-function hourlyForecastDataSlice(WeatherDataGrouping , apiData, changedValue){
+export function hourlyForecastDataSlice(WeatherDataGrouping , apiData, changedValue){
     const selectorValue = changedValue || document.querySelector(".js-selector").value;
     let dataSelection = WeatherDataGrouping[selectorValue];
     const nextDate = dayjs(selectorValue).add(1, 'day').format('YYYY-MM-DD');
@@ -70,13 +55,10 @@ function hourlyForecastDataSlice(WeatherDataGrouping , apiData, changedValue){
         return;
     };
     currentDaySlicingData = dataSelection.slice(0,6);
-   //console.log(currentDaySlicingData);
-   //console.log(changedValue);
-   renderHourlyList(currentDaySlicingData);
+    renderHourlyList(currentDaySlicingData);
 };
 
 function renderHourlyList(currentDaySlicingData) {
-
     const hourlyList = currentDaySlicingData.map(hourlyData => {
         const time = hourlyData.time;
         const temperature = Math.round(hourlyData.hourlyTemp);
@@ -92,13 +74,4 @@ function renderHourlyList(currentDaySlicingData) {
         
     }).join("");
     document.querySelector(".js-hourly-list").innerHTML = hourlyList;
-  
 };
-
-  
-const selector = document.querySelector(".js-selector");  
-selector.addEventListener('change', () => {
-    const selectorValue = document.querySelector(".js-selector").value;
-    hourlyForecastDataSlice(topLevelWeatherData, topLevelApiData, selectorValue);
-});
-

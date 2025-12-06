@@ -1,16 +1,9 @@
-import { fetchCurrentWeather } from "../data/current-weather-data.js";
-import { fetchLocation } from "../data/geocoding-api-data.js";
 import dayjs from 'https://cdn.jsdelivr.net/npm/dayjs@1.11.18/+esm';
 
-export async function loadingWeatherData() {
-    const {cityName , latitude, longitude} = await fetchLocation();
-    const weatherData = await fetchCurrentWeather(latitude, longitude);
-    updateWeatherViewHero(cityName,weatherData);
-    updateWeatherViewDataCarts(weatherData);
-    console.log(weatherData);   
+//--main rendering for current weather data 
+export function renderCurrentWeather(cityName,weatherData) {
+    updateWeatherViewHero(cityName,weatherData); 
 };
-
-loadingWeatherData();
 //--Hero section--
 function updateWeatherViewHero(cityName,weatherData) {
  //--data--
@@ -25,6 +18,7 @@ function updateWeatherViewHero(cityName,weatherData) {
  dateElement.innerHTML = date;
  const temperatureElement = document.querySelector('.js-temperature');
  temperatureElement.innerHTML = `${temperature}${temperatureUnit}`;
+ updateWeatherViewDataCarts(weatherData);
 };
 //--Weather data--
 function updateWeatherViewDataCarts(weatherData) {
