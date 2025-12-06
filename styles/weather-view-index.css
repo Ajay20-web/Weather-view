@@ -471,7 +471,7 @@ main {
     color:var(--dark-pink);
 }
 
-.hourly-header select {
+.hourly-header select{
     padding: .3rem .5rem;
     font-size: var(--font-s);
     background-color: rgba(191, 165, 181, 0.212);
@@ -481,6 +481,12 @@ main {
     color: var(--light-pink);
     font-weight: 400;
     cursor: pointer;
+}
+
+.day-selector option{
+    color: black;
+    cursor: pointer;
+    padding: .3rem .5rem;
 }
 
 
