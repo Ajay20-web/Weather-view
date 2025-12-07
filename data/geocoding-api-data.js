@@ -11,6 +11,8 @@ export async function fetchLocation() {
 
     if (!data.results || data.results.length === 0) {
      alert("City not found. Try another name.");
+     localStorage.removeItem('userInput')
+     location.reload();
      return;
    };
 
@@ -24,9 +26,9 @@ export async function fetchLocation() {
 } catch (error) {
     console.log('Error fetching location:', error.message);
     if ( error.message === `Cannot read properties of undefined (reading '0')` ) {
-    alert( 'Location not found. Please try again with a different city name.');
+   // alert( 'Location not found. Please try again with a different city name.');
     }else {
-    alert( error.message || 'Location not found. Please try again with a different city name.');
+    //alert( error.message || 'Location not found. Please try again with a different city name.');
     };
 };
 };
