@@ -11,7 +11,7 @@ let topLevelWeatherData;
 let topLevelApiData;
 
 async function loadingAllFiles() {
-   document.querySelector('body').classList.add('loading');
+   try{
       //--Rendering the current weather data--
       const {cityName , latitude, longitude} = await fetchLocation();
       const weatherData = await fetchCurrentWeather(latitude, longitude);
@@ -25,6 +25,9 @@ async function loadingAllFiles() {
       topLevelApiData = apiData;
       renderHourlyForecast(WeatherDataGrouping , apiData);
    document.querySelector('body').classList.remove('loading');
+   } catch{
+      tryAgain();
+   }
 
 };
 //--Search button functionality--
@@ -59,3 +62,25 @@ selector.addEventListener('change', () => {
 
 loadingAllFiles();
 searchButton();
+
+function showError() { 
+   const errorHtml=`
+      <div class="error-box-container error-display">
+         <div class="error-box">
+            <h2>Something Went Wrong</h2>
+            <p>Please try again later.</p>
+            <button class="js-try-again-btn">Try Again</button>
+         </div>
+      </div>
+   `;
+   document.querySelector('body').innerHTML = errorHtml;
+};
+
+function tryAgain() {
+   showError();
+   const tryAgainBtn = document.querySelector('.js-try-again-btn');
+   tryAgainBtn.addEventListener('click', () => {
+      tryAgainBtn.disabled = true;
+      location.reload();
+   });
+};
