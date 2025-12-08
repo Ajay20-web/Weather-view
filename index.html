@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/weather-view-index.css">
     <title>Weather View</title>
+    <script>
+       (function() {
+            const savedMode = JSON.parse(localStorage.getItem('mode'));
+            if (savedMode) {
+               document.documentElement.classList.add('dark');
+            }
+        })();
+    </script>
 </head>
 <body class="loading">
     <header>
@@ -19,7 +27,7 @@
                     <div class="drop" data-unit="imperial">Fahrenheit</div>
                 </div>
             </div>
-            <button class="dark-mode-btn">🌙</button>
+            <button class="dark-mode-btn js-mode-btn">🌙</button>
         </div>
     </header>
 

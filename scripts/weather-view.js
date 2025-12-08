@@ -34,6 +34,7 @@ async function loadingAllFiles() {
 function searchButton() {
    const searchBtn = document.querySelector(".js-search-btn");
    searchBtn.addEventListener('click' , () => {
+      document.querySelector('body').classList.add('loading');
       const userInput = document.querySelector('.js-search-bar');
       const inputValue = userInput.value;
       const searchString = inputValue.toLowerCase().trim();
@@ -59,10 +60,7 @@ selector.addEventListener('change', () => {
    hourlyForecastDataSlice(topLevelWeatherData, topLevelApiData, selectorValue);
    };
 });
-
-loadingAllFiles();
-searchButton();
-
+//--Error handling logic--
 function showError() { 
    const errorHtml=`
       <div class="error-box-container error-display">
@@ -75,7 +73,7 @@ function showError() {
    `;
    document.querySelector('body').innerHTML = errorHtml;
 };
-
+//--Try again button functionality--
 function tryAgain() {
    showError();
    const tryAgainBtn = document.querySelector('.js-try-again-btn');
@@ -84,3 +82,31 @@ function tryAgain() {
       location.reload();
    });
 };
+//-- Dark mode button functionality--
+function modeBtn() {
+   const modeBtn = document.querySelector('.dark-mode-btn'); 
+   const savedMode = JSON.parse(localStorage.getItem('mode'));
+   
+   const html = document.documentElement; 
+
+   if (savedMode === 'dark') {
+      modeBtn.innerHTML = '☀️';
+   }
+
+   modeBtn.addEventListener('click', () => {
+      const isDark = html.classList.contains('dark');
+
+      if (isDark) {
+         html.classList.remove('dark');
+         modeBtn.innerHTML = '🌙';
+         localStorage.removeItem('mode');
+      } else {
+         html.classList.add('dark');
+         modeBtn.innerHTML = '☀️';
+         localStorage.setItem('mode', JSON.stringify('dark'));
+      }
+   });
+};
+loadingAllFiles();
+searchButton();
+modeBtn();
