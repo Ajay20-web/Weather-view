@@ -1,7 +1,9 @@
+import { addUnitsToUrl } from '../scripts/utilities/weather-url-modifier.js';
 import dayjs from 'https://cdn.jsdelivr.net/npm/dayjs@1.11.18/+esm';
 
-export async function hourlyForecastData(latitude, longitude) {
-   const url = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&hourly=temperature_2m,weather_code&current=temperature_2m&timezone=auto&forecast_days=8`;
+export async function hourlyForecastData(latitude, longitude, unit) {
+   let url = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&hourly=temperature_2m,weather_code&current=temperature_2m&timezone=auto&forecast_days=8`;
+    url = addUnitsToUrl(url,unit);
     try {
         const response = await fetch(url);
         if (!response.ok) {

@@ -12,15 +12,16 @@ let topLevelApiData;
 
 async function loadingAllFiles() {
    try{
+     let currentUnit = localStorage.getItem('unit') || 'metric';
       //--Rendering the current weather data--
       const {cityName , latitude, longitude} = await fetchLocation();
-      const weatherData = await fetchCurrentWeather(latitude, longitude);
+      const weatherData = await fetchCurrentWeather(latitude, longitude,currentUnit);
       renderCurrentWeather(cityName,weatherData);
       //--Rendering the daily forecast data--
-      const foreCastData = await fetchDailyForecastData(latitude, longitude);
+      const foreCastData = await fetchDailyForecastData(latitude, longitude, currentUnit);
       renderDailyForecast(foreCastData);
       //--Rendering the hourly forecast data--
-      const {WeatherDataGrouping , apiData} = await hourlyForecastData(latitude, longitude);
+      const {WeatherDataGrouping , apiData} = await hourlyForecastData(latitude, longitude, currentUnit);
       topLevelWeatherData = WeatherDataGrouping;
       topLevelApiData = apiData;
       renderHourlyForecast(WeatherDataGrouping , apiData);
@@ -40,6 +41,7 @@ function searchButton() {
       const searchString = inputValue.toLowerCase().trim();
       if (!searchString) {
       alert('Please enter a city name to search.');
+      document.querySelector('body').classList.remove('loading');
       return;
       };
       saveData(searchString);
@@ -107,6 +109,24 @@ function modeBtn() {
       }
    });
 };
+//--Unit button functionality--
+function unitBtn() {
+   const unitDrop1 = document.querySelector('.js-drop1');
+   unitDrop1.addEventListener('click' , () =>{
+      document.querySelector('body').classList.add('loading');
+      localStorage.removeItem('unit');
+      unitDrop1.disabled = true;
+      loadingAllFiles();
+   });
+   const unitDrop2 = document.querySelector('.js-drop2');
+   unitDrop2.addEventListener('click' , () =>{
+      document.querySelector('body').classList.add('loading');
+      localStorage.setItem('unit',"imperial");
+      unitDrop2.disabled = true;
+      loadingAllFiles();
+   });
+};
+unitBtn();
 loadingAllFiles();
 searchButton();
 modeBtn();

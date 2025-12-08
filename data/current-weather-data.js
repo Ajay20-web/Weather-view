@@ -1,5 +1,7 @@
-export async function fetchCurrentWeather(latitude, longitude) {
-   const url = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,relative_humidity_2m,apparent_temperature,wind_speed_10m,pressure_msl`
+import { addUnitsToUrl } from '../scripts/utilities/weather-url-modifier.js';
+export async function fetchCurrentWeather(latitude, longitude, unit) {
+   let url = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,relative_humidity_2m,apparent_temperature,wind_speed_10m,pressure_msl`;
+    url = addUnitsToUrl(url,unit);
     try {
         const response = await fetch(url);
         if (!response.ok) {
