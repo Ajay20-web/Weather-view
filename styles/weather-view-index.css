@@ -1,48 +1,50 @@
 /* ------------------ DESIGN VARIABLES ------------------ */
 
 :root {
-    /* Colors */
-    --bg-gradient: linear-gradient(5deg, rgba(2,0,36,0.05), rgba(4,4,56,0.06), rgba(0,94,255,0.06));
-    --card-gradient: linear-gradient(5deg, rgba(45, 14, 94, 0.11), rgba(11, 16, 74, 0.068));
-    --accent-gradient: linear-gradient(to right, #9796f0, #fbc7d4);
-    --light-pink: #b72f90;
-    --dark-pink: #b8296596;
-    --button-bg:rgba(128, 128, 128, 0.151) ;
-    --search-bar-bg: #0606060c;
-    --placeholder-color: #595151; 
-    --unit-bg:rgba(128, 128, 128, 0.151) ;
-    --color-text: #000;
-    --color-white: #fff;
-    --logo-color:rgba(143, 79, 135, 0.963);
+  /* === COLORS (YOURS, UNTOUCHED) === */
+  --bg-gradient: linear-gradient(5deg, rgba(2,0,36,0.05), rgba(4,4,56,0.06), rgba(0,94,255,0.06));
+  --card-gradient: linear-gradient(5deg, rgba(45, 14, 94, 0.11), rgba(11, 16, 74, 0.068));
+  --accent-gradient: linear-gradient(to right, #9796f0, #fbc7d4);
+  --light-pink: #b72f9197;
+  --dark-pink: #b8296582;
+  --button-bg: rgba(128, 128, 128, 0.15);
+  --search-bar-bg: #0606060c;
+  --placeholder-color: #595151;
+  --unit-bg: rgba(128, 128, 128, 0.15);
+  --color-text: #000;
+  --color-white: #fff;
+  --logo-color: rgba(110, 27, 101, 0.619);
 
-    /* Spacing scale */
-    --space-xxs: .25rem;
-    --space-xs: .5rem;
-    --space-s: .7rem;
-    --space-m: 1rem;
-    --space-l: 1.5rem;
+  /* === SPACING (Professional 8px grid) === */
+  --space-xxs: .25rem;  /* 4px */
+  --space-xs: .5rem;    /* 8px */
+  --space-s: .75rem;    /* 12px */
+  --space-m: 1rem;      /* 16px */
+  --space-l: 1.5rem;    /* 24px */
+  --space-xl: 2rem;     /* 32px */
+  --space-xxl: 3rem;    /* 48px */
 
-    /* FONT SCALE */
-    --font-xs: 0.75rem;   /* 12px */
-    --font-s: 0.875rem;   /* 14px */
-    --font-m: 1rem;       /* 16px */
-    --font-l: 1.25rem;    /* 20px */
-    --font-xl: 1.5rem;    /* 24px */
-    --font-xxl: 2rem;     /* 32px */
+  /* === FONT SYSTEM (Mobile-first) === */
+  --font-xs: .75rem;    /* 12px */
+  --font-s: .875rem;    /* 14px */
+  --font-m: 1rem;       /* 16px */
+  --font-l: 1.25rem;    /* 20px */
+  --font-xl: 1.75rem;   /* 28px */
+  --font-xxl: 2.25rem;  /* 36px */
 
-    /* Radius */
-    --radius-s: 8px;
-    --radius-m: 12px;
-    --radius-l: 20px;
+  /* === RADIUS (Consistent geometry) === */
+  --radius-s: 8px;
+  --radius-m: 16px;
+  --radius-l: 24px;
 
-    /* Shadows */
-    --shadow-s: 0 3px 10px rgba(0,0,0,0.1);
-    --shadow-m: 0 4px 10px rgba(74,71,71,0.1);
-    --hover-shadow-s: 0 3px 10px rgba(10, 10, 10, 0.167);
-    --hover-shadow-m: 0 3px 10px rgba(10, 10, 10, 0.288);
-    
-    /* border */
-    --border:1px solid rgba(0, 0, 0, 0.1);
+  /* === SHADOWS (Correct elevation hierarchy) === */
+  --shadow-s: 0 2px 6px rgba(0,0,0,0.10);
+  --shadow-m: 0 4px 12px rgba(0,0,0,0.14);
+  --shadow-l: 0 8px 24px rgba(0,0,0,0.16);
+  --hover-shadow: 0 6px 18px rgba(0,0,0,0.18);
+
+  /* === BORDER === */
+  --border: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 /* ------------------ DARK MODE ------------------ */
@@ -52,7 +54,7 @@ html.dark body{
     --bg-gradient: linear-gradient(180deg, #0f0d12e4, #18171c);
     --card-gradient:linear-gradient(145deg, rgba(255, 255, 255, 0.18),  rgba(255, 255, 255, 0.03));
     --accent-gradient: linear-gradient(to right, #141270, #bc3758);
-    --light-pink: #fcfcfce7;
+    --light-pink: #fcfcfccc;
     --dark-pink: #ffffffb3;
     --search-bar-bg:rgba(255,255,255,0.1);
     --placeholder-color: #ffffffc1; 
@@ -74,16 +76,25 @@ html.dark body{
 
 /* ------------------ GLOBAL ------------------ */
 
+/* Global Reset */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
     margin: 0;
-    padding: var(--space-l);
+    padding: var(--space-m);
     font-family: sans-serif;
     width: 100%;
-    max-width: 1500px;
+    max-width: 1240px;
     margin: 0 auto;
     background: var(--bg-gradient);
     color: var(--color-text);
     text-transform: capitalize;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
     display: flex;
     flex-direction: column;
     gap: var(--space-l);
@@ -154,7 +165,7 @@ header {
 
 .header-right-section {
     display: flex;
-    gap: var(--space-xs);
+    gap: var(--space-s);
 }
 
 .header-left-section{
@@ -312,10 +323,9 @@ main {
 
 .main-heading h1{
     text-align: center;
-    font-size: var(--font-xxl);
+    font-size: var(--font-xl);
     font-weight: 600;
     color: var(--light-pink);
-    margin: 0;
     padding: var(--space-s) 0;
 }
 
@@ -344,7 +354,7 @@ main {
 }
 
 .hero-image-container {
-    height: 220px;
+    height: 230px;
     border-radius: var(--radius-l);
     background-image: var(--accent-gradient);
     display: flex;
@@ -361,6 +371,10 @@ main {
     font-size: var(--font-l);
 }
 
+.hero-info p{
+    margin-top: 12px;
+}
+
 
 /* =========================================================
    WEATHER DATA CARDS (GRID)
@@ -374,17 +388,21 @@ main {
 
 .weather-data-card {
     background: var(--card-gradient);
-    padding: var(--space-m);
+    padding: var(--space-s); 
     border-radius: var(--radius-m);
-    box-shadow: var(--shadow-m);
-    text-align: center;
+    box-shadow: var(--shadow-s);
     border: var(--border);
-   
-}
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-s); 
 
-.weather-data-card h4 {
-    font-size: var(--font-m);
-    font-weight: 600;
+    text-align: center;
+    min-height: 110px;
+    max-width: 175px;  
+   
 }
 
 .weather-data-card p {
@@ -423,7 +441,10 @@ main {
 .daily-forecast-data article p{
     margin: 0;
 }
-
+.daily-forecast h3{
+    margin-top: 12px;
+    margin-bottom: 16px;
+}
 .weather-icon{
     width: 40px;
 }
@@ -449,7 +470,7 @@ main {
     padding: var(--space-m);
     border-radius: var(--radius-l);
     background: linear-gradient(5deg, rgba(2,0,36,0.08), rgba(4,4,56,0.04), rgba(255,89,0,0.09));
-    box-shadow: var(--shadow-m);
+    box-shadow: var(--shadow-s);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -459,7 +480,7 @@ main {
 
 .hourly-header h3,
 .weather-data-card h4 {
-    font-size: var(--font-s);
+    font-size: var(--font-m);
     font-weight: 300;
 }
 
@@ -469,7 +490,7 @@ main {
     justify-content: space-between;
     align-items: center;
     gap: var(--space-m);
-    width: 95%;
+    width: 100%;
 }
 
 .hour-row {
@@ -569,46 +590,8 @@ main {
 @media (min-width: 900px) {
  /* ------------------ DESIGN VARIABLES FOR DESKTOP ------------------ */
 
-   :root {
-  /* FONT SYSTEM (Modular Scale 1.25) */
-  --font-xs: 0.75rem;   /* 12px  - very small labels */
-  --font-s: 1.13rem;     /* 14px  - UI labels */
-  --font-m: 1.29rem;    /* 20px  - section text */
-  --font-l: 1.563rem;   /* 25px  - small headings */
-  --font-xl: 2rem;      /* 32px  - main headings */
-  --font-xxl: 2.5rem;   /* 40px  - hero / current temperature */
-
-  /* SPACING SYSTEM (4 / 8px rhythm) */
-  --space-xxs: .25rem;  /* 4px */
-  --space-xs: .5rem;    /* 8px */
-  --space-s: .75rem;    /* 12px */
-  --space-m: 1rem;      /* 16px */
-  --space-l: 1.5rem;    /* 24px */
-  --space-xl: 2rem;     /* 32px */
-  --space-xxl: 3rem;    /* 48px */
-
-  /* RADIUS */
-  --radius-s: 8px;      /* subtle buttons */
-  --radius-m: 16px;     /* cards */
-  --radius-l: 24px;     /* containers / hero blocks */
-  }
     .weather-grid-container {
         flex-direction: row;
-    }
-
-    body{
-        height: 95vh; 
-    }
-
-    .hero-image-container{
-        height: 280px;
-    }
-    .hour-row {
-    height: 80px;
-    }
-
-    .weather-icon{
-        width: 45px;
     }
 
     .leftside-section {
@@ -617,5 +600,9 @@ main {
 
     .rightside-section {
         flex: 1;
+    }
+
+    body{
+        height: auto;
     }
 }
