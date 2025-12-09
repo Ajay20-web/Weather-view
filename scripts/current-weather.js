@@ -23,7 +23,7 @@ function updateWeatherViewHero(cityName,weatherData) {
 //--Weather data--
 function updateWeatherViewDataCarts(weatherData) {
     //--data--
-    const feelsLike = weatherData.current.apparent_temperature;
+    const feelsLike = Math.round(weatherData.current.apparent_temperature);
     const humidity = weatherData.current.relative_humidity_2m;
     const wind = weatherData.current.wind_speed_10m;
     const pressure = weatherData.current.pressure_msl;
