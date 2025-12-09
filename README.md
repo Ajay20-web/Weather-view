@@ -1,6 +1,12 @@
 # Weather View 🌤️
 
-**Weather View** is a responsive, feature-rich weather dashboard application built with Vanilla JavaScript, HTML, and CSS. It allows users to search for cities worldwide and view detailed current weather conditions, along with daily and hourly forecasts.
+**Weather View** is a responsive, feature-rich weather dashboard application built with **Vanilla JavaScript**, **HTML**, and **CSS**. It allows users to search for cities worldwide and view detailed current weather conditions, along with daily and hourly forecasts.
+
+## 🚀 Live Demo
+
+**[Click here to view the live site](YOUR_VERCEL_LINK_HERE)**
+
+---
 
 ## 📸 Screenshots
 
@@ -10,9 +16,7 @@
 ### 🌚 Dark Theme
 ![Dark UI](./screenshorts/dark-ui.png)
 
-## 🚀 Live Demo
-[Click here to view the live site](Soon)
-
+---
 
 ## 🚀 Features
 
@@ -21,16 +25,16 @@
 * **Hourly Forecast:** Detailed hourly weather breakdown for the next 7 days, selectable via a dropdown menu.
 * **Daily Forecast:** A 7-day overview of high/low temperatures and weather conditions.
 * **Dark/Light Mode:** Toggle between a modern dark theme and a clean light theme. The preference is saved in your browser's local storage.
-* **Unit Conversion:** Switch seamlessly between Metric (°C, km/h) and Imperial (°F, mph) units.
+* **Unit Conversion:** Switch seamlessly between **Metric** (°C, km/h) and **Imperial** (°F, mph) units.
 * **Responsive Design:** Fully responsive layout that adapts to mobile, tablet, and desktop screens.
-* **Skeleton Loading:** Smooth loading states with shimmer effects while fetching data.
+* **Skeleton Loading:** Smooth loading states with shimmer effects while fetching data to improve UX.
 
 ## 🛠️ Technologies Used
 
 * **HTML5:** Semantic structure.
 * **CSS3:** Custom styling using CSS Variables, Flexbox, Grid, and media queries for responsiveness.
-* **JavaScript (ES6+):** Modular architecture using ES Modules (`import`/`export`) for better code organization.
-* **Day.js:** Used for easy date and time formatting (loaded via CDN).
+* **JavaScript (ES6+):** Modular architecture using ES Modules (`import`/`export`) for clean code organization.
+* **Day.js:** Used for easy date and time formatting.
 
 ## 📡 APIs
 
@@ -41,6 +45,8 @@ This project relies on the following free and open APIs:
     * Fetches Geocoding data (Latitude/Longitude lookup for city names).
 2.  **[OpenWeatherMap](https://openweathermap.org/):**
     * Used solely for retrieving weather icon images corresponding to WMO codes.
+
+---
 
 ## 📂 Project Structure
 
