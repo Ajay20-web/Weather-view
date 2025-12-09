@@ -4,7 +4,7 @@
 
 ## 🚀 Live Demo
 
-**[Click here to view the live site](weather-view-nine.vercel.app)**
+https://weather-view-nine.vercel.app
 
 ---
 
