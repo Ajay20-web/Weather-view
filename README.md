@@ -4,11 +4,11 @@
 
 ## 📸 Screenshots
 
-### Light Theme
+### 🌞 Light Theme
 ![Light UI](./screenshorts/light-ui.png)
 
-### Dark Theme
-![Dark UI](./screenshots/dark.png)
+### 🌚 Dark Theme
+![Dark UI](./screenshorts/dark-ui.png)
 
 ## 🚀 Live Demo
 [Click here to view the live site](Soon)
