@@ -5,13 +5,13 @@
 ## 📸 Screenshots
 
 ### Light Theme
-![Light UI](screenshots/light.png)
+![Light UI](./screenshorts/light-ui.png)
 
 ### Dark Theme
-![Dark UI](screenshots/dark.png)
+![Dark UI](./screenshots/dark.png)
 
 ## 🚀 Live Demo
-[Click here to view the live site](https://yourappurl.com)
+[Click here to view the live site](Soon)
 
 
 ## 🚀 Features
